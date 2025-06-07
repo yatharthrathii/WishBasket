@@ -30,7 +30,7 @@ const Cart = ({ onClose }) => {
                                 className="flex items-center gap-4 bg-stone-100 p-4 rounded-lg shadow-sm"
                             >
                                 <img
-                                    src={item.imageUrl}
+                                    src={item.images}
                                     alt={item.title}
                                     className="w-16 h-16 rounded-lg border border-stone-300"
                                 />
