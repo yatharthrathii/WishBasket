@@ -1,36 +1,8 @@
-import { useState } from "react";
-import { X, Trash2 } from "lucide-react";
-
-const initialCart = [
-    {
-        title: "Colors",
-        price: 100,
-        imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
-        quantity: 2,
-    },
-    {
-        title: "Black and white Colors",
-        price: 50,
-        imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
-        quantity: 3,
-    },
-    {
-        title: "Yellow and Black Colors",
-        price: 70,
-        imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
-        quantity: 1,
-    },
-];
+import { X, Trash2, Plus, Minus } from "lucide-react"; // Plus and Minus icons bhi import karo
+import { useCart } from "../context/CartContext";
 
 const Cart = ({ onClose }) => {
-    const [cart, setCart] = useState(initialCart);
-
-    const handleRemove = (title) => {
-        const updated = cart.filter((item) => item.title !== title);
-        setCart(updated);
-    };
-
-    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const { cartItems, removeFromCart, cartTotal, totalItems, updateQuantity } = useCart();
 
     return (
         <>
@@ -49,10 +21,10 @@ const Cart = ({ onClose }) => {
 
                 {/* Cart Items */}
                 <div className="flex-1 overflow-y-auto space-y-6">
-                    {cart.length === 0 ? (
+                    {cartItems.length === 0 ? (
                         <p className="text-stone-500 text-center">Your cart is empty.</p>
                     ) : (
-                        cart.map((item, i) => (
+                        cartItems.map((item, i) => (
                             <div
                                 key={i}
                                 className="flex items-center gap-4 bg-stone-100 p-4 rounded-lg shadow-sm"
@@ -64,11 +36,32 @@ const Cart = ({ onClose }) => {
                                 />
                                 <div className="flex-1">
                                     <h3 className="font-semibold text-stone-800">{item.title}</h3>
-                                    <p className="text-sm text-stone-500">Qty: {item.quantity}</p>
-                                    <p className="font-medium text-stone-700">₹{item.price}</p>
+
+                                    {/* Qty with buttons */}
+                                    <div className="flex items-center gap-2 mt-1">
+                                        <button
+                                            onClick={() => updateQuantity(item.title, item.quantity - 1)}
+                                            className="p-1 rounded border border-stone-400 hover:bg-stone-200"
+                                            title="Decrease quantity"
+                                        >
+                                            <Minus size={14} />
+                                        </button>
+
+                                        <span className="text-sm text-stone-700">Qty: {item.quantity}</span>
+
+                                        <button
+                                            onClick={() => updateQuantity(item.title, item.quantity + 1)}
+                                            className="p-1 rounded border border-stone-400 hover:bg-stone-200"
+                                            title="Increase quantity"
+                                        >
+                                            <Plus size={14} />
+                                        </button>
+                                    </div>
+
+                                    <p className="font-medium text-stone-700 mt-1">₹{item.price}</p>
                                 </div>
                                 <button
-                                    onClick={() => handleRemove(item.title)}
+                                    onClick={() => removeFromCart(item.title)}
                                     className="text-red-500 hover:text-red-600"
                                     title="Remove"
                                 >
@@ -80,12 +73,19 @@ const Cart = ({ onClose }) => {
                 </div>
 
                 {/* Footer */}
-                {cart.length > 0 && (
-                    <div className="mt-6 border-t pt-4">
-                        <div className="flex justify-between text-lg font-semibold text-stone-800">
-                            <span>Total</span>
-                            <span>₹{total}</span>
+                {cartItems.length > 0 && (
+                    <div className="mt-6 border-t pt-4 space-y-2">
+                        {/* Total Items Count */}
+                        <div className="flex justify-between text-sm text-stone-600">
+                            <span>Total Items</span>
+                            <span>{totalItems}</span>
                         </div>
+
+                        <div className="flex justify-between text-lg font-semibold text-stone-800">
+                            <span>Total Price</span>
+                            <span>₹{cartTotal}</span>
+                        </div>
+
                         <button className="mt-4 w-full bg-amber-500 text-white py-3 rounded-full font-medium hover:bg-amber-600 transition">
                             Proceed to Checkout
                         </button>
@@ -95,14 +95,14 @@ const Cart = ({ onClose }) => {
 
             {/* Animation Style */}
             <style>{`
-                @keyframes slide-in {
-                    0% { transform: translateX(100%); opacity: 0 }
-                    100% { transform: translateX(0); opacity: 1 }
-                }
-                .animate-slide-in {
-                    animation: slide-in 0.3s ease-out forwards;
-                }
-            `}</style>
+        @keyframes slide-in {
+          0% { transform: translateX(100%); opacity: 0 }
+          100% { transform: translateX(0); opacity: 1 }
+        }
+        .animate-slide-in {
+          animation: slide-in 0.3s ease-out forwards;
+        }
+      `}</style>
         </>
     );
 };

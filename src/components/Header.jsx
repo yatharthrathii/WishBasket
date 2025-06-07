@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Menu, X, ShoppingCart } from "lucide-react";
 import Cart from "./Cart";
+import { useCart } from "../context/CartContext";
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [showCart, setShowCart] = useState(false);
+    const { cartQuantity } = useCart();
 
     return (
         <>
@@ -19,9 +21,14 @@ const Header = () => {
                         <a href="#" className="text-slate-600 hover:text-stone-500 font-medium transition">Contact</a>
                         <button
                             onClick={() => setShowCart(true)}
-                            className="flex items-center gap-2 bg-stone-600 text-white px-4 py-2 rounded-full hover:bg-stone-700 transition"
+                            className="relative flex items-center gap-2 bg-stone-600 text-white px-4 py-2 rounded-full hover:bg-stone-700 transition"
                         >
                             <ShoppingCart size={18} /> Cart
+                            {cartQuantity > 0 && (
+                                <span className="absolute -top-2 -right-2 bg-red-500 text-xs text-white rounded-full px-1.5">
+                                    {cartQuantity}
+                                </span>
+                            )}
                         </button>
                     </div>
 
@@ -45,6 +52,11 @@ const Header = () => {
                             className="bg-stone-600 text-white px-4 py-2 rounded-full font-medium hover:bg-stone-700 transition"
                         >
                             Cart
+                            {cartQuantity > 0 && (
+                                <span className="ml-2 bg-red-500 text-xs text-white rounded-full px-1.5">
+                                    {cartQuantity}
+                                </span>
+                            )}
                         </button>
                     </div>
                 )}
