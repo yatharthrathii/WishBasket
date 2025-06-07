@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X, ShoppingCart } from "lucide-react";
 import Cart from "./Cart";
 import { useCart } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -15,10 +16,10 @@ const Header = () => {
                     <h1 className="text-2xl font-extrabold text-stone-600 tracking-tight">WishBasket</h1>
 
                     <div className="hidden md:flex gap-8 items-center">
-                        <a href="#" className="text-slate-600 hover:text-stone-500 font-medium transition">Home</a>
-                        <a href="#" className="text-slate-600 hover:text-stone-500 font-medium transition">About</a>
-                        <a href="#" className="text-slate-600 hover:text-stone-500 font-medium transition">Store</a>
-                        <a href="#" className="text-slate-600 hover:text-stone-500 font-medium transition">Contact</a>
+                        <Link to="/" className="text-slate-600 hover:text-stone-500 font-medium transition">Home</Link>
+                        <Link to="/about" className="text-slate-600 hover:text-stone-500 font-medium transition">About</Link>
+                        <Link to="/store" className="text-slate-600 hover:text-stone-500 font-medium transition">Store</Link>
+                        <Link to="/contact" className="text-slate-600 hover:text-stone-500 font-medium transition">Contact</Link>
                         <button
                             onClick={() => setShowCart(true)}
                             className="relative flex items-center gap-2 bg-stone-600 text-white px-4 py-2 rounded-full hover:bg-stone-700 transition"
@@ -43,10 +44,11 @@ const Header = () => {
                 {/* Mobile Menu */}
                 {isOpen && (
                     <div className="md:hidden mt-4 flex flex-col gap-4 items-center bg-white shadow px-4 pb-4">
-                        <a href="#" className="text-slate-700 hover:text-stone-500 font-medium">Home</a>
-                        <a href="#" className="text-slate-700 hover:text-stone-500 font-medium">About</a>
-                        <a href="#" className="text-slate-700 hover:text-stone-500 font-medium">Store</a>
-                        <a href="#" className="text-slate-700 hover:text-stone-500 font-medium">Contact</a>
+                        <Link to="/" className="text-slate-700 hover:text-stone-500 font-medium">Home</Link>
+                        <Link to="/about" className="text-slate-700 hover:text-stone-500 font-medium">About</Link>
+                        <Link to="/store" className="text-slate-700 hover:text-stone-500 font-medium">Store</Link>
+                        <Link to="/contact" className="text-slate-700 hover:text-stone-500 font-medium">Contact</Link>
+
                         <button
                             onClick={() => setShowCart(true)}
                             className="bg-stone-600 text-white px-4 py-2 rounded-full font-medium hover:bg-stone-700 transition"

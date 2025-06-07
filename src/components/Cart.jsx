@@ -1,4 +1,4 @@
-import { X, Trash2, Plus, Minus } from "lucide-react"; // Plus and Minus icons bhi import karo
+import { X, Trash2, Plus, Minus } from "lucide-react";
 import { useCart } from "../context/CartContext";
 
 const Cart = ({ onClose }) => {
