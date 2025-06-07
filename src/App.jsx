@@ -1,4 +1,5 @@
 import './App.css'
+import Category from './Category/Category'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import HeroSection from './components/HeroSection'
@@ -9,6 +10,7 @@ function App() {
     <>
       <Header />
       <HeroSection />
+      <Category />
       <Footer />
     </>
   )
