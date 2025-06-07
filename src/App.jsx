@@ -6,7 +6,7 @@ import HeroSection from './components/HeroSection';
 import About from './pages/About';
 import Store from './pages/Store';
 import Home from './pages/Home';
-// import Contact from './pages/Contact';
+import Contact from './pages/Contact';
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
         } />
         <Route path="/about" element={<About />} />
         <Route path="/store" element={<Store />} />
-        {/* <Route path="/contact" element={<Contact />} /> */}
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </Router>
