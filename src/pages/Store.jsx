@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import { useAuth } from "../context/AuthContext";
+import toast from "react-hot-toast";
 
 const productsArr = [
     {
@@ -46,6 +48,15 @@ const productsArr = [
 const Store = () => {
     const navigate = useNavigate();
     const { addToCart } = useCart();
+    const { user } = useAuth();
+
+    const handleAddToCart = (product) => {
+        if (!user) {
+            toast.error("Please log in first to add items to your cart!");
+            return;
+        }
+        addToCart(product);
+    };
 
     return (
         <div className="min-h-screen px-6 py-12 bg-gradient-to-br from-white to-stone-100">
@@ -76,7 +87,7 @@ const Store = () => {
                             <p className="text-stone-500 font-medium mb-4">₹{product.price}</p>
 
                             <button
-                                onClick={() => addToCart(product)}
+                                onClick={() => handleAddToCart(product)}
                                 className="w-full bg-amber-500 text-white py-3 rounded-full font-semibold hover:bg-amber-600 transition duration-300 mb-3"
                             >
                                 Add to Cart

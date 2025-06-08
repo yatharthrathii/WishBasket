@@ -9,7 +9,7 @@ const tourData = [
 
 const Home = () => {
     return (
-        <section className="py-16 px-4 bg-gradient-to-b from-white to-stone-100 text-stone-800">
+        <section className="py-16 px-4 bg-stone-100 text-stone-800">
             <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-4xl font-bold mb-10">Upcoming Tours</h2>
 

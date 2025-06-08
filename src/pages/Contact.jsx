@@ -30,7 +30,7 @@ const Contact = () => {
     };
 
     return (
-        <section className="min-h-screen flex items-center justify-center px-6 py-12 font-sans">
+        <section className="bg-stone-100 min-h-screen flex items-center justify-center px-6 py-12 font-sans">
             <div className="max-w-lg w-full bg-white rounded-xl shadow-lg p-10">
                 <h2 className="text-3xl font-bold text-stone-700 mb-8 text-center tracking-wide">
                     Contact Us

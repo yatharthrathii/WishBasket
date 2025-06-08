@@ -17,7 +17,7 @@ export const CartProvider = ({ children }) => {
             toast.success("Item quantity increased!");
         } else {
             setCartItems((prev) => [...prev, { ...item, quantity: 1 }]);
-            toast.success("Item added to cart!");
+            toast.success(`${item.title} added to cart!`);
         }
     };
 

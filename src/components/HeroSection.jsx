@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 const HeroSection = () => {
     return (
-        <section className="py-16 px-6 md:px-12">
+        <section className="py-16 px-6 bg-stone-100 md:px-12">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
                 <div className="flex-1 text-center md:text-left">
                     <h1 className="text-4xl sm:text-5xl font-extrabold text-stone-600 leading-tight mb-4">
@@ -10,7 +12,7 @@ const HeroSection = () => {
                         Explore handpicked classics and trending hits — all in one basket.
                     </p>
                     <button className="bg-amber-500 text-white font-medium px-6 py-3 rounded-full hover:bg-amber-600 transition duration-300">
-                        Shop Now
+                        <Link to="/store">Shop Now</Link>
                     </button>
                 </div>
                 <div className="flex-1">

@@ -7,7 +7,9 @@ import About from './pages/About';
 import Store from './pages/Store';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
-import ProductDetail from './pages/ProductDetail'; 
+import ProductDetail from './pages/ProductDetail';
+import LoginForm from './pages/LoginForm'; 
+import SignupForm from './pages/SignupForm';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
         <Route path="/store" element={<Store />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/signup" element={<SignupForm />} />
       </Routes>
       <Footer />
     </Router>
