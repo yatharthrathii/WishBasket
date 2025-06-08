@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import { useAuth } from "../context/AuthContext";
+import toast from "react-hot-toast";
 
 const productsArr = [
     {
@@ -50,6 +52,16 @@ const ProductDetail = () => {
     const { addToCart } = useCart();
     const [mainImage, setMainImage] = useState(product?.images?.[0] || "");
     const [zoomed, setZoomed] = useState(false);
+    const { user } = useAuth();
+
+    const handleAddToCart = () => {
+        if (!user) {
+            toast.error("Please log in first to add items to your cart!");
+            return;
+        }
+        addToCart(product);
+        toast.success(`${product.title} added to cart!`);
+    };
 
     if (!product)
         return (
@@ -97,7 +109,7 @@ const ProductDetail = () => {
                         ₹{product.price}
                     </p>
                     <button
-                        onClick={() => addToCart(product)}
+                        onClick={handleAddToCart}
                         className="bg-amber-500 hover:bg-amber-600 transition text-white font-semibold px-6 py-3 rounded-full mb-6"
                     >
                         Add to Cart
