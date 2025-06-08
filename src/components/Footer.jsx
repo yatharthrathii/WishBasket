@@ -20,7 +20,7 @@ const Footer = () => {
                 {/* Right Side: Social Links */}
                 <div className="flex gap-6">
                     <a
-                        href="https://linkedin.com/in/your-profile"
+                        href="https://www.linkedin.com/in/yatharthrathii"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:text-white transition duration-300"
@@ -29,7 +29,7 @@ const Footer = () => {
                         <Linkedin size={22} />
                     </a>
                     <a
-                        href="https://github.com/your-username"
+                        href="https://github.com/yatharthrathii"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:text-white transition duration-300"
@@ -38,7 +38,7 @@ const Footer = () => {
                         <Github size={22} />
                     </a>
                     <a
-                        href="https://x.com/your-handle"
+                        href="https://x.com/yatharthrathiii?t=_HYFcs11Ml-xpPY1XeyC_Q&s=09"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:text-white transition duration-300"
@@ -47,7 +47,7 @@ const Footer = () => {
                         <Twitter size={22} />
                     </a>
                     <a
-                        href="https://instagram.com/your-profile"
+                        href="https://instagram.com/yatharthrathii"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:text-white transition duration-300"

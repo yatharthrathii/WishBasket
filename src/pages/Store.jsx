@@ -6,43 +6,100 @@ import toast from "react-hot-toast";
 const productsArr = [
     {
         id: 0,
-        title: "Colors",
-        price: 100,
+        title: "Lag Ja Gale",
+        price: 120,
         images: [
-            'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
+            "https://www.jansatta.com/wp-content/uploads/2018/02/lagjagale.jpg",
         ],
         reviews: [
-            { user: "Amit", comment: "Great colors and quality!", rating: 5 },
-            { user: "Neha", comment: "Loved it!", rating: 4 },
+            { user: "Amit", comment: "Such a soulful song!", rating: 5 },
+            { user: "Neha", comment: "Always brings back memories.", rating: 4 },
         ],
     },
     {
         id: 1,
-        title: "Black and white Colors",
-        price: 50,
+        title: "Tum Hi Ho",
+        price: 150,
         images: [
-            'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
+            "https://a10.gaanacdn.com/gn_img/albums/d41WjnWPLq/41Wjzk0NWP/size_m.webp"
         ],
-        reviews: [],
+        reviews: [
+            { user: "Rahul", comment: "Love Arijit’s voice!", rating: 5 },
+            { user: "Pooja", comment: "My all-time favorite.", rating: 5 },
+        ],
     },
     {
         id: 2,
-        title: "Yellow and Black Colors",
-        price: 70,
+        title: "Tujh Mein Rab Dikhta Hai",
+        price: 130,
         images: [
-            'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
+            "https://a10.gaanacdn.com/gn_img/albums/7rVW1aRWk5/rVW1pY53k5/size_m.webp"
         ],
-        reviews: [],
+        reviews: [
+            { user: "Sneha", comment: "So romantic and pure!", rating: 4.5 },
+            { user: "Manish", comment: "Melody at its best.", rating: 4 },
+        ],
     },
     {
         id: 3,
-        title: "Blue Color",
-        price: 100,
+        title: "Channa Mereya",
+        price: 140,
         images: [
-            'https://prasadyash2411.github.io/ecom-website/img/Album%204.png',
+            "https://i.scdn.co/image/ab67616d0000b273045f73dc8a716c781c5e1812"
         ],
-        reviews: [],
+        reviews: [
+            { user: "Karan", comment: "Heart-touching lyrics!", rating: 5 },
+            { user: "Ritu", comment: "Perfect for emotional days.", rating: 4 },
+        ],
     },
+    {
+        id: 4,
+        title: "Kal Ho Naa Ho",
+        price: 110,
+        images: [
+            "https://m.media-amazon.com/images/M/MV5BZTczMDQ0N2EtMTY4NS00ODJhLTk4MzQtOGJmZGRmY2M4MWQwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+        ],
+        reviews: [
+            { user: "Deepak", comment: "Timeless classic!", rating: 5 },
+            { user: "Alka", comment: "Always uplifts my mood.", rating: 4.5 },
+        ],
+    },
+    {
+        id: 5,
+        title: "Tera Ban Jaunga",
+        price: 135,
+        images: [
+            "https://c.saavncdn.com/807/Kabir-Singh-Hindi-2019-20240131131003-500x500.jpg"
+        ],
+        reviews: [
+            { user: "Vikas", comment: "Beautiful composition.", rating: 4 },
+            { user: "Anjali", comment: "Love the romantic vibe.", rating: 4.5 },
+        ],
+    },
+    {
+        id: 6,
+        title: "Pee Loon",
+        price: 125,
+        images: [
+            "https://i1.sndcdn.com/artworks-CzEZ3uBvYIbRcFZI-VcSDyw-t500x500.jpg"
+        ],
+        reviews: [
+            { user: "Raj", comment: "Smooth and catchy.", rating: 4 },
+            { user: "Sana", comment: "One of my favorites.", rating: 4.5 },
+        ],
+    },
+    {
+        id: 7,
+        title: "Ae Dil Hai Mushkil",
+        price: 140,
+        images: [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0wtl-k3F_LHwb4e2IiM97AMpglnXvr0k0Ng&s"
+        ],
+        reviews: [
+            { user: "Neeraj", comment: "Emotional and powerful!", rating: 5 },
+            { user: "Mira", comment: "Arijit never disappoints.", rating: 5 },
+        ],
+    }
 ];
 
 const Store = () => {

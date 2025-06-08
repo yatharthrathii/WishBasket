@@ -10,14 +10,15 @@ import {
 import toast from "react-hot-toast";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCnqkA9HIQeFVUC0XG4EG_s1BFAVZGaIhE",
-  authDomain: "wishbasket-577af.firebaseapp.com",
-  projectId: "wishbasket-577af",
-  storageBucket: "wishbasket-577af.appspot.com",
-  messagingSenderId: "498740655793",
-  appId: "1:498740655793:web:b7107b4bbd8c7b17af5490",
-  measurementId: "G-XERDF3XZZ5",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
+
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
