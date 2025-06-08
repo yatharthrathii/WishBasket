@@ -1,5 +1,5 @@
-import { X, Trash2, Plus, Minus } from "lucide-react";
 import { useCart } from "../context/CartContext";
+import { X, Trash2, Plus, Minus } from "lucide-react";
 
 const Cart = ({ onClose }) => {
     const { cartItems, removeFromCart, cartTotal, totalItems, updateQuantity } = useCart();
